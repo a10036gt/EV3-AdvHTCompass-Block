@@ -1,16 +1,14 @@
 # EV3-AdvHTCompass-Block
-![]()
+![](https://i0.wp.com/ofdl.tw/wp-content/uploads/2020/09/HTCOMPASS_OFDL.jpg?w=592&ssl=1)
 
-You can download ev3b file to import this block：[Latest release]()
+You can download ev3b file to import this block：[Latest release](https://github.com/a10036gt/EV3-AdvHTCompass-Block/releases)
 
 What’s EV3-AdvHTCompass-Block？
 
-EV3 ToolBox Block, a enhanced version of EV3 Color sensor block, you can read the normalization of raw values from EV3 color sensor in reflect light mode, and you calibrate of each sensor individually.
+HT Compass is a very useful sensor for WRO football, this time we Optimized the low level functions and Fix the bug of HT IIC protocol, prevent some communication failed.
 
-And our block has been optimized, the read speed is fast, can make your robot more stable.
+使用說明：https://ofdl.tw/ev3-hack/ht-compass-block-advanced/
 
-使用說明：https://ofdl.tw/ev3-hack/adv-ev3-color-sensor-block/
-
-User Guide：https://ofdl.tw/en/ev3-hacking/adv-ev3-color-block/
+User Guide：https://ofdl.tw/en/ev3-hacking/ht-compass-block-adv/
 
 
