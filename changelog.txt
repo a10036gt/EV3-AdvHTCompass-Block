@@ -1,0 +1,6 @@
+20200725
+single type output.
+------------------------
+20200726
+add HTCompass_IIC_RW.vix .
+redesign Calibrate mode.

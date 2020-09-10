@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EditorStrings>
+  <PolyGroups ModuleName="HiTechnic Compass">
+    <PolyGroup Name="HTCompassSensor" DisplayName="HiTechnic Compass - OFDL Dev.">
+      <Description><![CDATA[<p>Context help for PolyGroup <b>HTCompassSensor</b></p>]]></Description>
+      <Parameter Name="Port" DisplayName="Port">
+        <Description><![CDATA[<p>Context help for Parameter <b>Port</b></p>]]></Description>
+      </Parameter>
+      <Parameter Name="Heading" DisplayName="Heading">
+        <Description><![CDATA[<p>Context help for Parameter <b>Heading</b></p>]]></Description>
+      </Parameter>
+      <Parameter Name="Target" DisplayName="Target">
+        <Description><![CDATA[<p>Context help for Parameter <b>Target</b></p>]]></Description>
+      </Parameter>
+      <Parameter Name="Success" DisplayName="Success?">
+        <Description><![CDATA[<p>Context help for Parameter <b>Success</b></p>]]></Description>
+      </Parameter>
+      <Block Mode="MeasureAbsHeading" DisplayName="Absolute Heading">
+        <Description><![CDATA[<p>Context help for Block <b>Measure Absolute Heading</b></p>]]></Description>
+      </Block>
+      <Block Mode="MeasureRelHeading" DisplayName="Relative Heading">
+        <Description><![CDATA[<p>Context help for Block <b>Measure Relative Heading</b></p>]]></Description>
+      </Block>
+      <Category Name="Calibrate" DisplayName="Calibrate">
+          <Block Mode="CalibrateStart" DisplayName="Calibrate Start">
+            <Description><![CDATA[<p>Context help for Block <b>Start Compass Calibration</b></p>]]></Description>
+          </Block>
+          <Block Mode="CalibrateStop" DisplayName="Calibrate Stop">
+            <Description><![CDATA[<p>Context help for Block <b>Stop Compass Calibration</b></p>]]></Description>
+          </Block>
+      </Category>      
+    </PolyGroup>    
+  </PolyGroups>
+</EditorStrings>

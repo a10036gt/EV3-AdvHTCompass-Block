@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Version="1.0.2.10" xmlns="http://www.ni.com/SourceModel.xsd">
+    <Namespace Name="Project">
+        <VirtualInstrument IsTopLevel="false" IsReentrant="false" Version="1.0.2.0" xmlns="http://www.ni.com/VirtualInstrument.xsd">
+            <DataItem Name="SequenceIn" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="6" />
+            <DataItem Name="SequenceOut" DataType="NationalInstruments:SourceModel:DataTypes:X3SequenceWireDataType" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="6" />
+            <DataItem Name="Port" DataType="Single" DefaultTerminalDirection="Output" CallUsage="None" CallDirection="Input" CallIndex="0" DefaultValue="0" />
+            <DataItem Name="Success" DataType="Boolean" DefaultTerminalDirection="Input" CallUsage="None" CallDirection="Output" CallIndex="0" DefaultValue="False" />
+            <FrontPanel>
+                <fpruntime:FrontPanelCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fpruntime="clr-namespace:NationalInstruments.LabVIEW.FrontPanelRuntime;assembly=NationalInstruments.LabVIEW.FrontPanelRuntime" xmlns:Model0="clr-namespace:NationalInstruments.SourceModel.Designer;assembly=NationalInstruments.SourceModel" x:Name="FrontPanel" Model0:DesignerSurfaceProperties.CanSnapToObjects="True" Model0:DesignerSurfaceProperties.SnapToObjects="True" Model0:DesignerSurfaceProperties.ShowSnaplines="True" Model0:DesignerSurfaceProperties.ShowControlAdorners="True" Width="640" Height="480" />
+            </FrontPanel>
+            <BlockDiagram Name="__RootDiagram__">
+                <FlatSequence Id="n22" Bounds="777 140 644 168">
+                    <FlatSequence.Frame Id="D23" Bounds="7 7 231 154">
+                        <MethodCall Id="n12" Bounds="119 56 70 70" Target="HTCompass_IIC_RW\.vix">
+                            <Terminal Id="Port" Direction="Input" Wire="w13" DataType="Single" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="writeLength" Direction="Input" Wire="w16" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="writeData" Direction="Input" Wire="w18" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="readLength" Direction="Input" Wire="w20" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                            <Terminal Id="SGLBuffer" Direction="Output" DataType="Single[]" Hotspot="1 0.5" Bounds="56 0 14 14" />
+                        </MethodCall>
+                        <Wire Id="w16" Joints="N(n15:Out) N(n12:writeLength)" />
+                        <Wire Id="w18" Joints="N(n17:Out) N(n12:writeData)" />
+                        <Wire Id="w20" Joints="N(n19:Out) N(n12:readLength)" />
+                        <Literal Id="n15" Terminals="Out=w16" Bounds="70 70 28 14" Interpretation="Exact" DataType="Byte">3</Literal>
+                        <Literal Facade="ArrayConstantFacade" Id="n17" Terminals="Out=w18" Bounds="35 84 28 42" Interpretation="Exact" DataType="Byte[]">[1,65,0]</Literal>
+                        <Literal Id="n19" Terminals="Out=w20" Bounds="70 98 28 14" Interpretation="Exact" DataType="Byte">0</Literal>
+                        <Wire Id="w13" Joints="N(b14:D23) h(85) v(35) N(n12:Port) B(1) N(b11:D23)" />
+                    </FlatSequence.Frame>
+                    <FlatSequence.Frame Id="D16" Bounds="245 7 392 154">
+                        <ArrayIndex Rank="1" VerticalChunkCount="1" Id="n9" Terminals="array=w14, c0t0v=w16, c0t1v=w18" Bounds="273 56 28 28" />
+                        <Wire Id="w14" Joints="N(n12:SGLBuffer) N(n9:array)" />
+                        <Literal Id="n15" Terminals="Out=w16" Bounds="224 70 28 14" Interpretation="Exact" DataType="Int32">0</Literal>
+                        <Wire Id="w16" Joints="N(n15:Out) N(n9:c0t0v)" />
+                        <IsEqualTo0 Id="n17" Terminals="x\ \=\ 0\?=w20, x=w18" TopLeft="329 70" />
+                        <Wire Id="w18" Joints="N(n9:c0t1v) N(n17:x)" />
+                        <Wire Id="w20" Joints="N(n17:x\ \=\ 0\?) N(b19:D16)" />
+                        <MethodCall Id="n12" Bounds="119 56 70 70" Target="HTCompass_IIC_RW\.vix">
+                            <Terminal Id="Port" Direction="Input" Wire="w15" DataType="Single" Hotspot="0 0.5" Bounds="0 0 14 14" />
+                            <Terminal Id="writeLength" Direction="Input" Wire="w17" DataType="Byte" Hotspot="0 0.5" Bounds="0 14 14 14" />
+                            <Terminal Id="writeData" Direction="Input" Wire="w19" DataType="Byte[]" Hotspot="0 0.5" Bounds="0 28 14 14" />
+                            <Terminal Id="readLength" Direction="Input" Wire="w21" DataType="Byte" Hotspot="0 0.5" Bounds="0 42 14 14" />
+                            <Terminal Id="SGLBuffer" Direction="Output" Wire="w14" DataType="Single[]" Hotspot="1 0.5" Bounds="56 0 14 14" />
+                        </MethodCall>
+                        <Wire Id="w15" Joints="N(b11:D16) h(93.5) v(35) N(n12:Port)" />
+                        <Wire Id="w17" Joints="N(n18:Out) N(n12:writeLength)" />
+                        <Wire Id="w19" Joints="N(n19:Out) N(n12:writeData)" />
+                        <Wire Id="w21" Joints="N(n20:Out) N(n12:readLength)" />
+                        <Literal Id="n18" Terminals="Out=w17" Bounds="70 70 28 14" Interpretation="Exact" DataType="Byte">2</Literal>
+                        <Literal Facade="ArrayConstantFacade" Id="n19" Terminals="Out=w19" Bounds="35 84 28 28" Interpretation="Exact" DataType="Byte[]">[1,65]</Literal>
+                        <Literal Id="n20" Terminals="Out=w21" Bounds="70 98 28 14" Interpretation="Exact" DataType="Byte">1</Literal>
+                    </FlatSequence.Frame>
+                    <FlatSequence.Tunnel Id="b14" Terminals="n22=w8, D23=w13" TopLeft="0 28" />
+                    <FlatSequence.Tunnel Id="b11" Terminals="D16=w15, D23=w13" TopLeft="234.5 28" />
+                    <FlatSequence.Tunnel Id="b19" Terminals="n22=w10, D16=w20" TopLeft="630 77" />
+                </FlatSequence>
+                <Wire Id="w8" Joints="N(n12:Value) N(b14:n22)" />
+                <Wire Id="w10" Joints="N(b19:n22) N(n13:Value)" />
+                <Comment Bounds="763 371 739 77" SizeMode="User" AttachStyle="Free">
+                    <Content>Locn 0x41 is the mode control. Defaults to 0, which is measurement mode. Change to  0x43 to set calibration mode. Must be changed back to 0 when calibration is completed. (If cal. fails, locn. 0x41 will be set to 2 after the host has set it to 0 at the end of the failed calibrate attempt.)</Content>
+                </Comment>
+                <DataAccessor DataItem="Port" Id="n12" Bounds="672 168 70 14">
+                    <Terminal Id="Value" Direction="Output" Wire="w8" Hotspot="1 0.5" Bounds="0 0 70 14" />
+                </DataAccessor>
+                <DataAccessor DataItem="Success" Id="n13" Bounds="1463 217 77 14">
+                    <Terminal Id="Value" Direction="Input" Wire="w10" Hotspot="0 0.5" Bounds="0 0 77 14" />
+                </DataAccessor>
+            </BlockDiagram>
+        </VirtualInstrument>
+    </Namespace>
+</SourceFile>
